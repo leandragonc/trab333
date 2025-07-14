@@ -144,10 +144,10 @@ header {
   order: -1; /* imagem antes do form em mobile */
 }
 
-/* MOSAICO */
 .mosaico-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
   gap: 10px;
   max-width: 90%;
   margin: 0 auto;
@@ -156,18 +156,17 @@ header {
 .item {
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   border-radius: 8px;
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3; /* mantém proporção agradável */
+  height: 100%;
 }
 
-.foto1 { background-image: url("../img/loja1.png"); }
-.foto2 { background-image: url("../img/loja2.png"); }
-.foto3 { background-image: url("../img/loja3.png"); }
-.foto4 { background-image: url("../img/loja4.png"); }
-.foto5 { background-image: url("../img/loja5.png"); }
+/* Diferentes spans para criar variação no mosaico */
+.foto1 { background-image: url("../img/loja1.webp"); grid-column: span 2; grid-row: span 1; }
+.foto2 { background-image: url("../img/loja2.png");  grid-column: span 1; grid-row: span 2; }
+.foto3 { background-image: url("../img/loja3.webp"); grid-column: span 1; grid-row: span 1; }
+.foto4 { background-image: url("../img/loja4.webp"); grid-column: span 2; grid-row: span 2; }
+.foto5 { background-image: url("../img/loja5.webp"); grid-column: span 1; grid-row: span 1; }
 
 /* CARROSSEL */
 .carousel-inner img {
