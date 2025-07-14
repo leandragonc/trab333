@@ -1,10 +1,5 @@
-html {
-  scroll-behavior: smooth;
-}
 
-body {
-  padding-top: 70px; /* espaço para o navbar fixed-top não sobrepor o conteúdo */
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +11,7 @@ body, html {
   background-color: #f4f4f4;
   overflow-x: hidden; /* evita scroll horizontal */
   scroll-behavior: smooth;
+   padding-top: 70px;
 }
 
 /* HEADER */
@@ -146,12 +142,18 @@ header {
 
 .mosaico-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 150px;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-auto-rows: 200px;
   gap: 10px;
   max-width: 90%;
   margin: 0 auto;
 }
+
+.foto1 { grid-column: span 1; grid-row: span 1; }
+.foto2 { grid-column: span 1; grid-row: span 2; }
+.foto3 { grid-column: span 2; grid-row: span 1; }
+.foto4 { grid-column: span 1; grid-row: span 1; }
+.foto5 { grid-column: span 2; grid-row: span 2; }
 
 .item {
   background-size: cover;
@@ -162,11 +164,11 @@ header {
 }
 
 /* Diferentes spans para criar variação no mosaico */
-.foto1 { background-image: url("../img/loja1.webp"); grid-column: span 2; grid-row: span 1; }
-.foto2 { background-image: url("../img/loja2.png");  grid-column: span 1; grid-row: span 2; }
-.foto3 { background-image: url("../img/loja3.webp"); grid-column: span 1; grid-row: span 1; }
-.foto4 { background-image: url("../img/loja4.webp"); grid-column: span 2; grid-row: span 2; }
-.foto5 { background-image: url("../img/loja5.webp"); grid-column: span 1; grid-row: span 1; }
+.foto1 { background-image: url("../img/loja1.webp");}
+.foto2 { background-image: url("../img/loja2.png");}
+.foto3 { background-image: url("../img/loja3.webp");}
+.foto4 { background-image: url("../img/loja4.webp");}
+.foto5 { background-image: url("../img/loja5.webp");}
 
 /* CARROSSEL */
 .carousel-inner img {
