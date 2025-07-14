@@ -195,26 +195,10 @@ html {
 .produto:focus-within {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  z-index: 10; /* para ficar sobre outros */
+  z-index: 10; 
 }
 
-/* --- 3. Scroll-driven animation em todas as sessões --- */
 
-/* Define timeline para rolagem da sessão */
-@scroll-timeline scroll-timeline {
-  source: auto;
-  orientation: block;
-}
-
-/* Aplica animação ligada ao scroll em cada sessão (fade-in e slide-up) */
-.secao {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeSlideIn 1s forwards;
-  animation-timeline: scroll-timeline;
-}
-
-/* Delay progressivo para dar efeito de cascata */
 #venda {
   animation-delay: 0.1s;
 }
