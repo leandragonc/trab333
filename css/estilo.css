@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+.menu-sticky {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.menu-sticky a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+.menu-sticky a:hover {
+    color: #ffd700;
+}
+
+.secao {
+    padding: 40px 20px;
+    text-align: center;
+    scroll-margin-top: 60px;
+}
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.produto {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ccc;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-col {
+    margin: 10px;
+}
+
+.form-figura-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.formulario-cadastro form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.imagem-cadastro img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.imagem-cadastro{
+    order: -1;
+}
+@media (max-width: 750px) {
+    .produtos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-figura-container {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem-contato {
+        order: -1;
+    }
+}
+  
+  .mosaico-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 90%;
+    margin: 0 auto; 
+  }
+  
+  .item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    width: 100%;
+    /* Altura variável conforme imagem */
+    height: auto;
+  }
+  /* Diferentes alturas para criar o mosaico quebrado */
+  .foto1 { background-image: url("../img/sadasd.png"); height: 250px; }
+  .foto2 { background-image: url("../img/dasd.png"); height: 150px; }
+  .foto3 { background-image: url("../img/Design\ sem\ nome.png"); height: 200px; }
+  .foto4 { background-image: url("../img/dasdasd.png"); height: 180px; }
+  .foto5 { background-image: url("../img/Design\ sem\ nome\ \(1\).png"); height: 220px; }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .mosaico-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  /* --- 1. Animação com animation (pulso suave) --- */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+#animacao {
+  padding: 60px 20px;
+  background: #222;
+  color: #ffd700;
+  text-align: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Conteúdo da sessão animacao para ocupar mais altura */
+#animacao p {
+  max-width: 600px;
+  margin: 20px auto 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* --- 2. Efeito transition nos cards produto --- */
+.produto {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto:hover, 
+.produto:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 10; /* para ficar sobre outros */
+}
+
+/* --- 3. Scroll-driven animation em todas as sessões --- */
+
+/* Define timeline para rolagem da sessão */
+@scroll-timeline scroll-timeline {
+  source: auto;
+  orientation: block;
+}
+
+/* Aplica animação ligada ao scroll em cada sessão (fade-in e slide-up) */
+.secao {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 1s forwards;
+  animation-timeline: scroll-timeline;
+}
+
+/* Delay progressivo para dar efeito de cascata */
+#venda {
+  animation-delay: 0.1s;
+}
+#cadastro {
+  animation-delay: 0.3s;
+}
+#mosaico {
+  animation-delay: 0.5s;
+}
+#carrossel {
+  animation-delay: 0.7s;
+}
+#tabela-clientes {
+  animation-delay: 0.9s;
+}
+#animacao {
+  animation-delay: 1.1s;
+}
+
+/* Keyframes da animação scroll-driven */
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fallback para navegadores sem suporte a scroll-timeline */
+@supports not (animation-timeline: scroll-timeline) {
+  .secao {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
