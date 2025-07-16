@@ -63,8 +63,6 @@ header {
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  animation-timeline: view
-  animation-range: cover 0%;
 }
 
 /* Animação fadeInUp */
